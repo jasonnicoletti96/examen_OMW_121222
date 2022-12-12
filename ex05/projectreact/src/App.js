@@ -4,6 +4,7 @@ import Draggable from "react-draggable";
 
 function App() {
     const [topText, setTopText] = useState('')
+    const [botText, setBotText] = useState('')
     const [textSize, setTextSize] = useState(30)
     const [image, setImage] = useState({})
     const [color, setColor] = useState("#ffffff")
@@ -47,6 +48,14 @@ function App() {
                         <textarea
                             value={topText}
                             onChange={(e) => setTopText(e.target.value)}
+                            className=" mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
+                            placeholder=""/>
+                    </label>
+                    <label className="block">
+                        <span className="text-gray-700">Texte du bas</span>
+                        <textarea
+                            value={botText}
+                            onChange={(e) => setBotText(e.target.value)}
                             className=" mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
                             placeholder=""/>
                     </label>
@@ -108,6 +117,20 @@ function App() {
                                     font-outline-2
                                     ">{topText}</div>
                         </div>
+                       
+                    </Draggable>
+                    <Draggable>
+                        <div className="dr dlc absolute top-3/4 left-1/2">
+                            <div
+                                style={{fontSize: `${textSize}px`,color:`${color}`}}
+                                className="text-white text-center  font-['Impact']
+                                    tracking-wide whitespace-pre-line
+                                    uppercase
+                                    hover:cursor-move
+                                    font-outline-2
+                                    ">{botText}</div>
+                        </div>
+                       
                     </Draggable>
 
  
